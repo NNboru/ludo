@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>-_-</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta property="og:title" content="ludo" />
+    <meta property="og:description" content="play ludo here" />
+    <meta property="og:image" itemprop="image" content="" />
+
+    <link rel=stylesheet href='ludo.css' />
+    
+</head>
+
+<body id=bdy>
+
+    <img id=iconre title="restart" src='files/reload.png' />
+
+    <div id=dlgpop>
+        <div class='heading'>Confirm Restart</div>
+        <div>
+            <input type="button" value='Restart' id='butre1' autofocus />
+            <input type="button" value='Cancel' id='butcancel' />
+        </div>
+    </div>
+    <div id=dlgre>
+        <div class="heading">Game-Over</div>
+        <div>
+            <input type="button" value='Restart' id='butre2' autofocus />
+        </div>
+    </div>
+
+    <div id=dlgstart>
+        <p class='heading'>LUDO</p>
+        <div>
+            <div class='select'></div>
+            <input type="name" value='' placeholder="Player1" id='pl1' spellcheck="false" autofocus />
+        </div>
+        <div>
+            <div class='select'></div>
+            <input type="name" value='' placeholder="Player2" id='pl2' spellcheck="false" />
+        </div>
+        <div>
+            <div class='select'></div>
+            <input type="name" value='' placeholder="Player3" id='pl3' spellcheck="false" />
+        </div>
+        <div>
+            <div class='select'></div>
+            <input type="name" value='' placeholder="Player4" id='pl4' spellcheck="false" />
+        </div>
+        <input type=button value='Start' id='butstart' />
+    </div>
+
+    <div id=main>
+
+        <div id=surface></div>
+
+        <div id=name1 class='plname'></div>
+        <div id=name2 class='plname'></div>
+        <div id=name3 class='plname'></div>
+        <div id=name4 class='plname'></div>
+
+        <div class='goti blue'   data-ind='-1' data-startl='11.3' data-startt='9.2' ><div></div></div>
+        <div class='goti blue'   data-ind='-1' data-startl='11.3' data-startt='21.6'><div></div></div>
+        <div class='goti blue'   data-ind='-1' data-startl='23.4' data-startt='21.6'><div></div></div>
+        <div class='goti blue'   data-ind='-1' data-startl='23.4' data-startt='9.2' ><div></div></div>
+        <div class='goti green'  data-ind='-1' data-startl='71.3' data-startt='69.2'><div></div></div>
+        <div class='goti green'  data-ind='-1' data-startl='71.3' data-startt='81.6'><div></div></div>
+        <div class='goti green'  data-ind='-1' data-startl='83.4' data-startt='69.2'><div></div></div>
+        <div class='goti green'  data-ind='-1' data-startl='83.4' data-startt='81.6'><div></div></div>
+        <div class='goti red'    data-ind='-1' data-startl='11.3' data-startt='69.2'><div></div></div>
+        <div class='goti red'    data-ind='-1' data-startl='11.3' data-startt='81.6'><div></div></div>
+        <div class='goti red'    data-ind='-1' data-startl='23.4' data-startt='81.6'><div></div></div>
+        <div class='goti red'    data-ind='-1' data-startl='23.4' data-startt='69.2'><div></div></div>
+        <div class='goti yellow' data-ind='-1' data-startl='71.3' data-startt='9.2' ><div></div></div>
+        <div class='goti yellow' data-ind='-1' data-startl='83.4' data-startt='9.2' ><div></div></div>
+        <div class='goti yellow' data-ind='-1' data-startl='83.4' data-startt='21.6'><div></div></div>
+        <div class='goti yellow' data-ind='-1' data-startl='71.3' data-startt='21.6'><div></div></div>
+
+    </div>
+
+
+    <div id='dice'>
+        <div id=d1></div>
+        <div id=d2></div>
+        <div id=d3></div>
+        <div id=d4></div>
+        <div id=d5></div>
+        <div id=d6></div>
+    </div>
+
+    <div class='win'>
+        <img id=win1 src='files/gold.png' />
+        <img id=win2 src='files/silver.png' />
+        <img id=win3 src='files/bronze.png' />
+        <img id=win4 src='files/shit.png' />
+    </div>
+
+    <div id=divfull></div>
+
+    <script src='ludo.js'></script>
+</body>
+
+</html>
