@@ -244,7 +244,7 @@ async function movegoti({target}){
         await timer(241);
     }
     goti.dataset.ind = ind;
-    if(ind!=0 && ind<51 && safepos.includes(ind))
+    if(ind!=0 && (ind<51 || ind==56) && safepos.includes(ind))
         audisafe.play();
     //arrange old place
     arrange(gotisat(old[0],old[1]));
