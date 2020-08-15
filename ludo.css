@@ -18,9 +18,12 @@ body{
 }
 body *{
     box-sizing: border-box;
-    font:20px helvetica;
-    -webkit-text-stroke-width: medium;
+    font:18px helvetica;
+    /* -webkit-text-stroke-width: medium; */
     font-variant-caps: small-caps;
+    letter-spacing: 2px;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
     /* transition: all .2s; */
 }
 input{
@@ -69,7 +72,7 @@ input:hover{
     /* border-radius: 20px; */
     z-index: 20;
     font-size: 2em;
-    position: fixed;
+    position: absolute;
     width :calc(100vw - 8px);
     height:calc(100vh - 8px);
     display: grid;
@@ -224,8 +227,8 @@ input:hover{
     z-index: 1;
 }
 .goti>div{
-    height:calc(var(--size)/20);
-    width:calc(var(--size)/20);
+    height:calc(var(--size)/16);
+    width:calc(var(--size)/16);
     border: 2px solid #0005;
     border-radius: 50% 50% 0 50%;
     transform: rotate(45deg);
