@@ -1,2 +1,3 @@
-[![alt text](https://github.com/NNboru/ludo/raw/master/files/ludo2.png '# A normal ludo game')](https://nnboru.github.io/ludo)
+[# PLAY LUDO](https://nnboru.github.io/ludo)
 
+A light weight interactive 2-4 player _ludo_ webgame which also include sound effects. 
