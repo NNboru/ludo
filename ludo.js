@@ -70,13 +70,13 @@ let xypos = [ [0,0],[1,0],[0,1],[0,-1],[-1,0],[2,0] ];
 
 objstore = [
     {path:pathblue  , goti:Array.from(document.getElementsByClassName('blue' )),
-          color:'blue', surfL:'5.6', surfT:'5.6', diceL:'16', diceT:'16' },
+          color:'blue', surfL:'5.6', surfT:'5.6', diceL:'16', diceT:'16', notSixCnt:0, sixCnt:0 },
     {path:pathyellow, goti:Array.from(document.getElementsByClassName('yellow')),
-        color:'yellow', surfL:'65.6',surfT:'5.6', diceL:'77', diceT:'16' },
+        color:'yellow', surfL:'65.6',surfT:'5.6', diceL:'77', diceT:'16', notSixCnt:0, sixCnt:0},
     {path:pathgreen , goti:Array.from(document.getElementsByClassName('green')), 
-        color:'green',  surfL:'65.6',surfT:'65.6',diceL:'77', diceT:'77' },
+        color:'green',  surfL:'65.6',surfT:'65.6',diceL:'77', diceT:'77', notSixCnt:0, sixCnt:0},
     {path:pathred   , goti:Array.from(document.getElementsByClassName('red')  ), 
-        color:'red'  ,  surfL:'5.6',  surfT:'65.6',diceL:'16', diceT:'77' },
+        color:'red'  ,  surfL:'5.6',  surfT:'65.6',diceL:'16', diceT:'77', notSixCnt:0, sixCnt:0},
 ];
 
 function rand(min,max){
@@ -109,6 +109,23 @@ function Tpos(x){
     return `calc(var(--top) + ${x}*var(--pre))`;
 }
 
+function calProbOfSix(){
+    if(obj[chance].sixCnt>=2) return 0;
+    let progress = obj.map(player => {
+        let sum = 0;
+        player['goti'].forEach(goti => sum += +goti.dataset.ind);
+        sum += (4-player['goti'].length)*56;
+        return sum;
+    });
+    let avg = progress.reduce((a, b) => a + b)/progress.length;
+    let prob = obj[chance].notSixCnt/8;
+    if (progress[chance] > avg){
+        prob += .98**((progress[chance]-avg)/2);
+    }
+    else prob += 1+(1-.98**((avg-progress[chance])/4))*16;
+    if(obj[chance].sixCnt==1) return prob/2;
+    return prob;
+}
 
 let sides = document.querySelectorAll('#dice>div')
 function roll(){
@@ -130,15 +147,20 @@ function roll(){
     dice.style.top=y+'px';
     dice.style.animationDuration=time;
     dice.style.animationName='ani-scale';
-    let ind = Math.min(5,rand(0,5+six[chance]));
-    if(ind==5) six[chance]=-.4;
-    else six[chance]+=.5;
+    let ind = Math.min(5,rand(0,4+calProbOfSix()));
+    console.log(calProbOfSix(), obj[chance].sixCnt,obj[chance].notSixCnt, ind);
     if(cheat!=-1){
         ind=cheat;
-        // cheat=-1;
+    }
+    if (ind==5){
+        obj[chance].sixCnt+=1;
+        obj[chance].notSixCnt=0;
+    }
+    else{
+        obj[chance].sixCnt=0;
+        obj[chance].notSixCnt+=1;
     }
     [x,y] = xypos[ind];
-    // console.log(ind+1);
     x=x*90 + rand(-2,2)*360 - 8+rand(0,1)*16;
     y=y*90 + rand(-2,2)*360 - 8+rand(0,1)*16;
     d1.style.transform=`rotateY(${y}deg) rotateX(${x}deg) translateZ(20px)`;
@@ -470,7 +492,7 @@ for(let g of allgotis){
     g.style.top =Tpos(g.dataset.startt);
 }
 
-var chance, num=0, torise=[], six=[-.2,-.2,-.2,-.2], numofplayer=4, obj, cheat=-1, medals;
+var chance, num=0, torise=[], six=[0,0,0,0], numofplayer=4, obj, cheat=-1, medals;
 var audiclick=new Audio('files/click.wav');
 var audiroll=new Audio('files/roll.wav');
 var audimove=new Audio('files/tuii.mp3');
