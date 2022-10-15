@@ -148,9 +148,10 @@ function roll(){
     dice.style.animationDuration=time;
     dice.style.animationName='ani-scale';
     let ind = Math.min(5,rand(0,4+calProbOfSix()));
-    console.log(calProbOfSix(), obj[chance].sixCnt,obj[chance].notSixCnt, ind);
-    if(cheat!=-1){
+    console.log(calProbOfSix(), Math.round(100*calProbOfSix()/(5+calProbOfSix()))+"%");
+    if(cheat>0){
         ind=cheat;
+        cheat=-1
     }
     if (ind==5){
         obj[chance].sixCnt+=1;

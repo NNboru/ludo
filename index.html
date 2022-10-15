@@ -10,7 +10,8 @@
     <meta property="og:image" itemprop="image" content="https://github.com/NNboru/ludo/raw/master/files/ludo2.png" />
 
     <link rel=stylesheet href='ludo.css' />
-    
+    <link rel="canonical" href="https://nnboru.github.io/ludo/" />
+    <link rel="manifest" href="/ludo/manifest.webmanifest">
 </head>
 
 <body id=bdy>
@@ -100,6 +101,14 @@
     <div id=divfull title='fullscreen'></div>
 
     <script src='ludo.js'></script>
+    <script>
+        if (navigator.serviceWorker) {
+          navigator.serviceWorker.register (
+            '/github-page-pwa/sw.js',
+            {scope: '/github-page-pwa/'}
+          )
+        }
+    </script>
 </body>
 
 </html>

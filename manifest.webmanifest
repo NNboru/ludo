@@ -1,0 +1,17 @@
+{
+  "name": "Ludo",
+  "short_name": "Ludo",
+  "description": "2 to 4 player offline ludo game",
+  "scope": "/ludo/",
+  "start_url": "/ludo/",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "display": "fullscreen", 
+  "icons": [
+      {
+        "src": "/ludo/files/ludo_icon.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+  ]
+}
