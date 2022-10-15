@@ -1,32 +1,32 @@
 var GHPATH = '/ludo';
+var GHPATH2 = '/ludo/files';
 var APP_PREFIX = 'ludo_';
-var VERSION = 'version_03';
+var VERSION = 'version_04';
 var URLS = [    
   `${GHPATH}/`,
   `${GHPATH}/index.html`,
   `${GHPATH}/ludo.css`,
-  `${GHPATH}/img/icon.png`,
   `${GHPATH}/ludo.js`,
-  `${GHPATH}/bronze.png`,
-  `${GHPATH}/click.wav`,
-  `${GHPATH}/d1.jpg`,
-  `${GHPATH}/d2.jpg`,
-  `${GHPATH}/d3.jpg`,
-  `${GHPATH}/d4.jpg`,
-  `${GHPATH}/d5.jpg`,
-  `${GHPATH}/d6.jpg`,
-  `${GHPATH}/gold.png`,
-  `${GHPATH}/ludo.png`,
-  `${GHPATH}/ludo2.png`,
-  `${GHPATH}/ludo_icon.png`,
-  `${GHPATH}/reload.png`,
-  `${GHPATH}/roll.wav`,
-  `${GHPATH}/safe.mp3`,
-  `${GHPATH}/shit.png`,
+  `${GHPATH2}/bronze.png`,
+  `${GHPATH2}/click.wav`,
+  `${GHPATH2}/d1.jpg`,
+  `${GHPATH2}/d2.jpg`,
+  `${GHPATH2}/d3.jpg`,
+  `${GHPATH2}/d4.jpg`,
+  `${GHPATH2}/d5.jpg`,
+  `${GHPATH2}/d6.jpg`,
+  `${GHPATH2}/gold.png`,
+  `${GHPATH2}/ludo.png`,
+  `${GHPATH2}/ludo2.png`,
+  `${GHPATH2}/ludo_icon.png`,
+  `${GHPATH2}/reload.png`,
+  `${GHPATH2}/roll.wav`,
+  `${GHPATH2}/safe.mp3`,
+  `${GHPATH2}/shit.png`,
   `${GHPATH}/silver.png`,
-  `${GHPATH}/tiyau.wav`,
-  `${GHPATH}/tuii.mp3`,
-  `${GHPATH}/yippe.mp3`,
+  `${GHPATH2}/tiyau.wav`,
+  `${GHPATH2}/tuii.mp3`,
+  `${GHPATH2}/yippe.mp3`,
 ]
 
 var CACHE_NAME = APP_PREFIX + VERSION
