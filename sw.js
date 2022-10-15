@@ -1,7 +1,7 @@
 var GHPATH = '/ludo';
 var GHPATH2 = '/ludo/files';
 var APP_PREFIX = 'ludo_';
-var VERSION = 'version_05';
+var VERSION = 'version_06';
 var URLS = [    
   `${GHPATH}/`,
   `${GHPATH}/index.html`,

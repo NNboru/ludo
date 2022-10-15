@@ -476,7 +476,13 @@ bdy.onfullscreenchange=()=>{
     else
         iconre.style.display=divfull.style.display='initial';
 }
-window.onbeforeunload=()=>"Do you really want to leave?";
+function exitHandler(e){
+    if (calProbOfSix()!=1){
+        e.preventDefault();
+        return e.returnValue = "Are you sure you want to exit?";
+    }
+}
+addEventListener("beforeunload", exitHandler, {capture: true});
 bdy.onerror=e=>console.dir(e);
 
 //init
