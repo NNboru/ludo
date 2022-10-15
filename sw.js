@@ -23,7 +23,7 @@ var URLS = [
   `${GHPATH2}/roll.wav`,
   `${GHPATH2}/safe.mp3`,
   `${GHPATH2}/shit.png`,
-  `${GHPATH}/silver.png`,
+  `${GHPATH2}/silver.png`,
   `${GHPATH2}/tiyau.wav`,
   `${GHPATH2}/tuii.mp3`,
   `${GHPATH2}/yippe.mp3`,
