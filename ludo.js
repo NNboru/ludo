@@ -130,6 +130,7 @@ function calProbOfSix(){
 let sides = document.querySelectorAll('#dice>div')
 function roll(){
     dice.onclick=null;
+    surface.onclick=null;
     let x = rand(20,bdy.offsetWidth-100),y= rand(20,bdy.offsetHeight-100);
     let time = (.3+Math.random()/2);
     if(!audiroll.ended){
@@ -344,6 +345,7 @@ function nextplayer(){
     dice.style.top =Tpos(obj[chance].diceT);
     dice.style.cursor='pointer';
     dice.onclick=roll;
+    surface.onclick=roll;
     dice.onanimationend=onrolled;
     bdy.style.backgroundColor=obj[chance].color;
 }
