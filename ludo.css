@@ -149,7 +149,7 @@ input:hover{
     margin:auto;
     height:var(--size);
     width:var(--size);
-    background-image: url(files/ludo.png);
+    background-image: url(files/ludo2.png);
     background-size: contain;
     background-repeat: no-repeat;
 }
