@@ -234,7 +234,7 @@ input:hover{
     transform: rotate(45deg);
 }
 .largegoti{
-    animation-name: ani-scale2;
+    animation-name: ani-scale-goti;
     animation-duration: 1.2s;
     z-index: 15;
     cursor: pointer;
@@ -263,7 +263,6 @@ input:hover{
     transition-timing-function: ease-out;
     animation-timing-function: ease-out;
     z-index: 10;
-    transform: scale(1.6);
 }
 #dice > div{
     position: absolute;
@@ -327,14 +326,14 @@ input:hover{
 
 
 @keyframes ani-scale{
-    60%{
-        transform:scale(1.2);
+    45%{
+        transform:scale(2.5) translate(calc(var(--pre)*-.8),calc(var(--pre)*-2));;
     };
     100%{
         transform:scale(1);
     }
 }
-@keyframes ani-scale2{
+@keyframes ani-scale-goti{
     60%{
         transform:scale(1.5) translate(calc(var(--pre)*-.8),calc(var(--pre)*-2));
     }

@@ -132,7 +132,7 @@ function roll(){
     dice.onclick=null;
     surface.onclick=null;
     let x = rand(20,bdy.offsetWidth-100),y= rand(20,bdy.offsetHeight-100);
-    let time = (.3+Math.random()/2);
+    let time = (.4+Math.random()/2);
     if(!audiroll.ended){
         audiroll.pause();
         audiroll.currentTime=0;
